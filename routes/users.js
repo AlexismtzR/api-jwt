@@ -19,7 +19,7 @@ router.post('/:id', async (req, res) => {
 
     const  updates  =  Object.keys(req.body)
 
-    const  allowedUpdates  = ['name', 'english', 'skills','cvlink']
+    const  allowedUpdates  = ['name', 'english', 'skills','cvlink', 'email']
 
     const  isValidOperation  =  updates.every((update) =>  allowedUpdates.includes(update))
 

@@ -12,9 +12,9 @@ const schemaRegister = Joi.object({
 })
 
 const schemaCuenta= Joi.object({
-    name: Joi.string().min(6).max(255).required(),
-    cname: Joi.string().min(6).max(255).required(),
-    opname: Joi.string().min(6).max(255).required(),
+    name: Joi.string().min(1).max(255).required(),
+    cname: Joi.string().min(1).max(255).required(),
+    opname: Joi.string().min(1).max(255).required(),
     members: Joi.array()
 })
 
@@ -91,6 +91,7 @@ router.post('/crearcuentas', async (req, res) => {
         members: req.body.members
     })
 
+
     try {
         const savedAccount = await cuenta.save();
         res.json({
@@ -131,7 +132,7 @@ router.get('/accounts', async (req, res) => {
 
 
 router.post('/deleteusr/:id', async (req, res) => {
-
+    //router.delete('/users/:id', async (req, res) => {
     var id = req.params.id
 
     try {
@@ -164,7 +165,7 @@ router.post('/deleteusr/:id', async (req, res) => {
 })
 
 router.post('/deleteaccount/:id', async (req, res) => {
-
+    //router.delete('/accounts/:id', async (req, res) => {
     var id = req.params.id
     try {
         const cuenta = await Cuenta.findOneAndRemove(
@@ -192,7 +193,7 @@ router.post('/deleteaccount/:id', async (req, res) => {
 
 })
 
-router.get('/cuenta/:id', async (req, res) => {
+router.get('/accounts/:id', async (req, res) => {
 
 
     var id = req.params.id
@@ -217,7 +218,7 @@ router.get('/cuenta/:id', async (req, res) => {
     }
 }) 
 
-router.post('/cuenta/:id', async (req, res) => {
+router.post('/accounts/:id', async (req, res) => {
 
     var id = req.params.id
 
@@ -323,7 +324,7 @@ router.post('/cuenta/addmembers/:accountid/:userid', async (req, res) => {
     });
     await Cuenta.updateOne(
         { _id: accountid }, 
-        {$push: {members:{_id: userid, finicio: req.body.finicio, ffin: req.body.ffin, name:req.body.name}} });
+        {$push: {members:{_id: userid, finicio: req.body.finicio, ffin: req.body.ffin, name:user.name}} });
 
         await movimiento.save();
 
@@ -331,10 +332,22 @@ router.post('/cuenta/addmembers/:accountid/:userid', async (req, res) => {
         error: null,
         data: {
             "Mensaje":"usuario agregado con exito",
-        }
+        },
     })
 
 }) 
+
+router.get('/movimientos', async (req, res) => {
+
+    const movimientos = await Movimiento.find();
+
+    res.json({
+        error: null,
+        data: {
+            Movimiento: movimientos,
+        }
+    })
+})
 
 
 module.exports = router

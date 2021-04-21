@@ -1,0 +1,60 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\ziirn\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add morgan nanoid swagger-jsdic swagger-ui-express
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\ziirn\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Amazon\AWSCLI\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\ziirn\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\ziirn\.windows-build-tools\python27\;C:\Users\ziirn\AppData\Local\Microsoft\WindowsApps;C:\Users\ziirn\AppData\Roaming\npm;C:\Users\ziirn\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ziirn\AppData\Local\Android\Sdk\platform-tools;C:\Users\ziirn\.dotnet\tools;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/swagger-jsdic: Not found
+      at Request.params.callback [as _callback] (C:\Users\ziirn\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\ziirn\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:311:20)
+      at Request.<anonymous> (C:\Users\ziirn\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:311:20)
+      at IncomingMessage.<anonymous> (C:\Users\ziirn\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:417:28)
+      at IncomingMessage.emit (events.js:323:22)
+      at endReadableNT (_stream_readable.js:1204:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "api-jwt",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "nodemon index",
+      "start": "node index"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@hapi/joi": "^17.1.1",
+      "bcrypt": "^5.0.1",
+      "body-parser": "^1.19.0",
+      "dotenv": "^8.2.0",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^5.12.3"
+    },
+    "devDependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.17.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
